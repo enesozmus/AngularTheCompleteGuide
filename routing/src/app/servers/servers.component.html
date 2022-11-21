@@ -1,0 +1,53 @@
+<div class="row">
+    <div>
+        <button class="btn btn-primary" (click)="onReloadPage()">Reload Page</button> 
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-xs-12 col-sm-4">
+        <div class="list-group">
+            <a
+                [routerLink]="['/servers', server.id]"
+                [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
+                [fragment]="'loading'"
+                class="list-group-item"
+                *ngFor="let server of servers"
+            >
+                {{ server.name }}
+            </a>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <router-outlet></router-outlet>
+        <!-- 
+        <app-edit-server></app-edit-server>
+        <app-server></app-server>
+        -->
+        <br>
+        <hr>
+        <div>
+            <a routerLink="users">
+                (users) => Go to users
+            </a>
+            <br>
+            <a routerLink="/users">
+                (/users) => Go to users
+            </a>
+            <br>
+            <a routerLink="./users">
+                (./users) => Go to users
+            </a>
+            <br>
+            <a routerLink="../users">
+                (../users) => Go to users
+                <br>
+                |
+                <br>
+                bir level yukarı çık sonra <strong>users</strong> ekle
+            </a>
+        </div>
+        <br>
+        <hr>
+    </div>
+</div>

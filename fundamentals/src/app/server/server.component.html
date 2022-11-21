@@ -1,0 +1,61 @@
+<h1>Server with ID ___ is ___.</h1>
+<h1>{{'Server'}} with ID {{serverID}} is {{serverStatus}}.</h1>
+<button class="btn btn-primary" disabled>Add a server</button>
+
+<p>
+    You could basically translate databinding with <strong>communication</strong>.
+    Communication between your <strong>business logic</strong> and <strong>the template</strong>.
+    The only thing the user sees is the template.
+    It is responsible for this communication.
+    We get different ways of communication.
+
+        String Interpolation {{ "data" }}
+            So whatever you have between the curly braces, in the end it somehow has to return a string
+            so you could call a method here which returns a string in the end
+            x The only other restriction is you can't write multi-line expressions here
+        Property Bindng [property]="data"
+        So if we click a button, we maybe want to trigger something in our TypeScript code
+        Event Binding (event)="exp"
+        Two way databinding
+</p>
+
+
+
+<h1>The Server Component</h1>
+
+
+<app-success-alert></app-success-alert>
+<div class="container">
+    <h1 class="mt-5">I'm in the app.component.html</h1>
+    <p class="mt-2">How does our app know that it should render the content of <strong>app.component.html</strong> here?
+    </p>
+    <p>Actually, this is not the file served by the server.</p>
+    <p>Instead the <strong>index.html</strong> file here is served by the server</p>
+    <p>Angular is a framework which allows you to create <strong>single page application</strong>, this is the single
+        page which is served, the <strong>index.html</strong> file.</p>
+
+    <h1 class="mt-3">(app-root)</h1>
+    <p>app-root is not a default HTML element.</p>
+    <p>Instead this is one of our own components</p>
+    <p>The root component which will tie together our whole application in the end.</p>
+
+    <h1 class="mt-3">AppComponent</h1>
+    <p>We have this <strong>"selector property"</strong> which assigns a string as a value.</p>
+    <p>and this string holds <strong>app-root</strong></p>
+    <p>Now this clearly is the same text as in our <strong>index.html</strong> file</p>
+
+    <hr>
+    <!--
+        So we have our selector here, app-server and we can use it inside other templates.
+        I can add my 'app-server' selector as an element.
+        <app-server></app-server>
+    -->
+    <app-server></app-server>
+
+    <!--    
+        Angular selects the element by attribute and not by the element itself
+        selector: '[app-server]',
+        <div app-server></div>
+    -->
+
+</div>

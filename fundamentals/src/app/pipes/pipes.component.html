@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <input type="text" [(ngModel)]="filteredStatus">
+            <hr>
+            <!---->
+            <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+            <!---->
+            <hr>
+            <!---->
+            <h2>App Status: {{appStatus | async}} </h2>
+            <!--
+                if we do this, you'll see [object object ] or [object Promise]
+                and this is correct because it is object,
+                it's a promise and a promise is an object
+                ☼but after two seconds, we know that this is no longer an object,
+                but Angular doesn't know
+                ☼ there is a nice little pipe we can use here to make the transformation of this data easier. 
+                    → We know that it will be a string after two seconds
+                    → and we want to output the string
+                    → | async
+            -->
+            <hr>
+            <ul class="list-group mt-2">
+                <!---->
+                <li class="list-group-item mt-2" *ngFor="let server of (servers | filter: filteredStatus :'status')"
+                    [ngClass]="getStatusClasses(server)">
+                    <span class="badge">
+                        {{ server.status }}
+                    </span>
+                    <strong>{{ server.name | shorten:3 }}</strong> | {{ server.instanceType | uppercase }} |
+                    {{ server.started | date: 'fullDate' }}
+                </li>
+                <!---->
+            </ul>
+        </div>
+    </div>
+</div>

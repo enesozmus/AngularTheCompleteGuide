@@ -1,0 +1,17 @@
+<p>Server with ID <span>{{serverID}}</span> and <span style="color:blue;">{{getServerColor()}}</span> is <span>{{serverStatus}}</span>. </p>
+<br>
+<hr>
+<button class="btn btn-primary" [disabled]="allowNewServer"> Add a new server</button>
+<br>
+<hr>
+<button class="btn btn-success" (click)="onCreateServer()">Change Brand</button>
+<p>Brand: {{brand}} </p>
+<br>
+<hr>
+<label for="label-input-bind">Write a brand</label>
+<input type="text" id="label-input-bind" (input)="onGetTheBrand($event)">
+{{onSelectedBrand}}
+<br>
+<hr>
+<label for="label-input-bind">Write a brand</label>
+<input type="text" id="label-input-bind" [(ngModel)]="onSelectedBrand">

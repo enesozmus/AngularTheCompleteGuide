@@ -1,0 +1,4 @@
+<label for="label-input-bind">Add an item:</label>
+<input type="text" id="label-input-bind" #newItem>
+
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>

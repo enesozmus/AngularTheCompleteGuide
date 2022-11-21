@@ -1,0 +1,95 @@
+<!--
+<h1>Chapter 1: @Input()</h1>
+<app-first-child [item]="currentItem"></app-first-child>
+<br>
+<hr>
+<app-another-child [falanca]="currentHero"></app-another-child>
+<br>
+<hr>
+<app-last-child *ngFor="let hero of heroes" [hero]="hero"></app-last-child>
+<br>
+<hr>
+<h1>Chapter 2: @Output()</h1>
+<app-for-output (newItemEvent)="addItem($event)"></app-for-output>
+<br>
+<hr>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
+<br>
+<hr>
+<h1>Chapter 3: String Interpolation, Property Binding, Event Binding</h1>
+<app-databinding></app-databinding>
+-->
+
+<!--
+  We split up our app into multiple components.
+  Now, we need to pass data between these components.
+  We need to be able to send data into a component or receive data, receive an event.
+-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Add new Servers 1!</p>
+      <label>Server Name</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerName">
+      <label>Server Content</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <br>
+      <button class="btn btn-danger" (click)="onAddServer()">Add Content Redprint</button>
+      <button class="btn btn-primary ms-2" (click)="onAddBlueprint()">Add Content Blueprint</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card mt-3" *ngFor="let element of serverElements">
+        <div class="card-header"> {{ element.name }} </div>
+        <div class="card-body">
+          <p class="card-text">
+            <strong *ngIf="element.type === 'server'" style="color: red">
+              {{ element.content }}
+            </strong>
+            <strong *ngIf="element.type === 'blueprint'" style="color: blue">
+              {{ element.content }}
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!---->
+    <app-part-one (siyah)="onCarCreatedBlack($event)" (redCar)="onCarCreatedRed($event)"
+      (greenCar)="onCarCreatedGreen($event)"></app-part-one>
+    <!---->
+  </div>
+  <hr>
+  <div class="row">
+    <!---->
+    <app-part-two *ngFor="let car of cars" [takeItFromParentComp]="car"> </app-part-two>
+    <!---->
+  </div>
+</div>
+
+
+<h1>{{ title }}</h1>
+
+<app-content>
+  <p left #paragraphLeft>This content shown in the left side</p>
+
+  <p middle>This content shown in the middle</p>
+
+  <p right-side>This content shown in the right side</p>
+
+  <p>
+    This content shown alone in <mark><b>div-without-selector</b></mark>
+  </p>
+</app-content>
+
+<p><b>Normal text without ng-content usage</b></p>

@@ -1,0 +1,21 @@
+<div class="div-with-selector">
+    <div class="content">
+        <!---->
+        <div class="left">
+            <ng-content select="[left]"></ng-content>
+        </div>
+        <!---->
+        <div class="middle">
+            <ng-content select="[middle]"></ng-content>
+        </div>
+        <!---->
+        <div class="right">
+            <ng-content select="[right-side]"></ng-content>
+        </div>
+        <!---->
+    </div>
+</div>
+<!---->
+<div class="div-without-selector">
+    <ng-content></ng-content>
+</div>

@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-md-offset-3">
+            <!---->
+            <!---->
+            <form #postForm="ngForm" (ngSubmit)="onCreatePost(postForm.value)">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" required ngModel name="title" />
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea class="form-control" id="content" required ngModel name="content"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="!postForm.valid">
+                    Send Post
+                </button>
+            </form>
+            <!---->
+            <!---->
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-md-offset-3">
+            <button class="btn btn-primary" (click)="onFetchPosts()">
+                Fetch Posts
+            </button>
+            |
+            <button class="btn btn-danger" [disabled]="loadedPosts.length < 1" (click)="onClearAllPosts()">
+                Clear Posts
+            </button>
+        </div>
+    </div>
+    <!---->
+    <!---->
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-md-offset-3">
+            <!---->
+            <p *ngIf="loadedPosts.length < 1 && !loadingIndicator">No posts available!</p>
+            <!---->
+            <ul class="list-group" *ngIf="loadedPosts.length >= 1 && !loadingIndicator">
+                <li class="list-group-item mt-2" style="background-color: pink;" *ngFor="let post of loadedPosts">
+                    <h2> {{post.title}} </h2>
+                    <h6> {{post.content}} </h6>
+                </li>
+            </ul>
+            <!---->
+            <p *ngIf="loadingIndicator && errorMessages == null">loading Indicator</p>
+            <!---->
+            <div class="alert alert-danger mt-3" role="alert" *ngIf="errorMessages != null">
+                <h1>Component&Ssubscribe Error Handling</h1>
+                <p> {{errorMessages}} </p>
+                <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+            </div>
+            <!---->
+            <div class="alert alert-danger mt-4" role="alert" *ngIf="errorMessagesForSubject != null">
+                <h1>Service&Subject Error Handling</h1>
+                <p> {{errorMessagesForSubject}} </p>
+                <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+            </div>
+            <!---->
+        </div>
+    </div>
+</div>

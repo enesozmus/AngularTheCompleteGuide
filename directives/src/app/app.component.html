@@ -1,0 +1,66 @@
+<!--
+<app-attribute-directives></app-attribute-directives>
+<app-attribute-directives></app-attribute-directives>
+-->
+
+<!--
+<app-structural-directives></app-structural-directives>
+-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <br><br><br>
+            <button class="btn btn-primary" (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+            <br><br><br>
+            <h2 appBasicHighlight>Style me with basic directive!!</h2>
+            <br>
+            <h2 appBetterHighlight [defaultColor]="'gray'" [highlightColor]="'purple'">Style me with a better directive!
+            </h2>
+            <!--<p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p>-->
+            <br><br>
+            <ul class="list-group">
+                <div *ngIf="!onlyOdd">
+                    <li
+                        class="list-group-item"
+                        *ngFor="let even of evenNumbers"
+                    >
+                        {{even}}
+                    </li>
+                </div>
+                <div *ngIf="onlyOdd">
+                    <li
+                        class="list-group-item"
+                        *ngFor="let odd of oddNumbers"
+                        [ngClass]="{customOdd: odd % 2 !== 0}"
+                        [ngStyle]="{backgroundColor: odd % 2 !== 1 ? 'green' : 'pink'}"
+                    >
+                        {{odd}}
+                    </li>
+                </div>
+                <div *appUnless="onlyOdd">
+                    <li
+                        class="list-group-item"
+                        *ngFor="let even of evenNumbers"
+                    >
+                        {{ even }} | <span style="color: purple;">custom directive</span>
+                    </li>
+                </div>
+            </ul>
+            <ng-template [ngIf]="onlyOdd">
+                <p class="mt-5">ng-template | Only odd</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12" [ngSwitch]="value">
+            <p *ngSwitchCase="5">Value is 5</p>
+            <p *ngSwitchCase="10">Value is 10</p>
+            <p *ngSwitchCase="100">Value is 100</p>
+            <p *ngSwitchDefault>Value is Default</p>
+        </div>
+    </div>
+</div>

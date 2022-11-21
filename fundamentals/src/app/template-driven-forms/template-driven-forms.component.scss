@@ -1,0 +1,12 @@
+.container {
+    margin-top: 50px;
+}
+
+input,
+select {
+    border-color: blue;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

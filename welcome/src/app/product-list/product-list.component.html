@@ -1,0 +1,44 @@
+<h2>Products</h2>
+
+<!--
+    With *ngFor, the <div> repeats for each product in the list.
+-->
+<div *ngFor="let product of products">
+
+    <!---->
+    <!---->
+    <!--
+        The {{ product.name }} statement is an example of Angular's interpolation syntax.
+        Interpolation {{ }} lets you render the property value as text.
+    -->
+    <!--
+        Property binding [ ] lets you use the property value in a template expression.
+    -->
+    <h3>
+        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> {{ product.name }} </a>
+    </h3>
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+        On a <p> element, use an *ngIf directive so that Angular only creates the <p> element if the current product has a description.
+    -->
+    <p *ngIf="product.description">
+        Description: {{ product.description }}
+    </p>
+    <!---->
+    <!---->
+    <!---->
+    <!--
+        Add a button so users can share a product.
+        Bind the button's click event to the share() method in product-list.component.ts
+        Event binding uses a set of parentheses, ( ), around the event, as in the (click) event on the <button> element.
+    -->
+    <button type="button" (click)="share()">
+        Share
+    </button>
+    <!---->
+    <!---->
+    <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+</div>

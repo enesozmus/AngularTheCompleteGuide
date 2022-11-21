@@ -1,0 +1,24 @@
+<div class="col-sm-12">
+  <!---->
+  <p>Add new car 2!</p>
+  <label>Brand</label>
+  <input type="text" class="form-control" [(ngModel)]="newCarBrand">
+  <!---->
+  <label>Year</label>
+  <input type="number" class="form-control" [(ngModel)]="newCarYear">
+  <!---->
+  <label>Test</label>
+  <input type="text" class="form-control" #templateV>
+  <!---->
+  <br>
+  <button class="btn btn-dark" (click)="onBlack()">Make it black</button>
+  <button class="btn btn-danger ms-2" (click)="onRed()">Make it red</button>
+  <button class="btn btn-success ms-2" (click)="onGreen()">Make it green</button>
+  <!---->
+  <button class="btn btn-warning ms-2" (click)="understandingTemplateVariables(templateV)">
+    Template Variables
+  </button>
+  <button class="btn btn-warning ms-2" (click)="onGettingAccessToTheTemplateVariables()">
+    Template Variables 2
+  </button>
+</div>

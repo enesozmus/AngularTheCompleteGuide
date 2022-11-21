@@ -1,0 +1,45 @@
+div {
+    margin: 0.2em;
+}
+
+.div-with-selector {
+    border: 1px solid red;
+    display: flex;
+}
+
+.div-without-selector {
+    border: 1px solid blue;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    border: none !important;
+}
+
+.content,
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lime;
+}
+
+.content,
+.middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid magenta;
+}
+
+.content,
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rebeccapurple;
+}

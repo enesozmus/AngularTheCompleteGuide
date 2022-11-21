@@ -1,0 +1,30 @@
+<div class="col-sm-12">
+    <div class="card mt-3">
+        <!---->
+        <!---->
+        <div class="card-header" #header>
+            {{ car.brand }}
+        </div>
+        <!---->
+        <!---->
+        <div class="card-body">
+            <p class="card-text">
+                <!---->
+                <strong *ngIf="car.color === 'black'" style="color: black">
+                    {{ car.color }}
+                </strong>
+                <!---->
+                <strong *ngIf="car.color === 'red'" style="color: red">
+                    {{ car.color }}
+                </strong>
+                <!---->
+                <strong *ngIf="car.color === 'green'" style="color: green">
+                    {{ car.color }}
+                </strong>
+                |
+                {{car.year}}
+                <!---->
+            </p>
+        </div>
+    </div>
+</div>

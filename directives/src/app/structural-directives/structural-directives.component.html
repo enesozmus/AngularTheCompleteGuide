@@ -1,0 +1,13 @@
+<h2 *ngIf="onShow">Mercedes-Benz</h2>
+<h2 *ngIf="onShow2">Mercedes-Benz 2</h2>
+<br>
+<hr>
+<h1 style="color:red;">Else Condition</h1>
+<h2 *ngIf="onList; else noList">Liste dolu</h2>
+<ng-template #noList>
+    <h2>Liste boş</h2>
+</ng-template>
+<br>
+<hr>
+<h1 style="color:red;">ngFor</h1>
+<h3 *ngFor="let server of servers; let i = index"> {{server}} - {{i}} </h3>

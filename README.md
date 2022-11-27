@@ -1,11 +1,12 @@
 # 2022 Angular The Complete Guide
-> * [Angular resmi dokümantasyonu](https://angular.io/docs), [Gençay Yıldız](https://www.youtube.com/c/Gen%C3%A7ayY%C4%B1ld%C4%B1z), [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/), [Andrei Neagoie](https://www.udemy.com/user/andrei-neagoie/) ve [Neil Cummings](https://www.udemy.com/user/neil-cummings-2/) adlı eğitmenlerin çalışmalarını takip ederek Angular öğrenme serüvenim...
+> * [Angular resmi dokümantasyonu](https://angular.io/docs), [Gençay Yıldız](https://www.linkedin.com/in/gen%C3%A7ay-y%C4%B1ld%C4%B1z-a1453987/), [Maximilian Schwarzmüller](https://www.linkedin.com/in/maximilian-schwarzmueller/), [Andrei Neagoie](https://www.linkedin.com/in/andreineagoie/), [Neil Cummings](https://www.linkedin.com/in/necummings/) ve [Jurek Wozniak](https://www.linkedin.com/in/jurek-wozniak-77a4b4114/) adlı eğitmenlerin çalışmalarını takip ederek Angular ve RxJS öğrenme serüvenim...
 <hr/>
 
 # İlgili Repolar
 > * [Onion Architecture](https://github.com/enesozmus/OnionArchitecture)
 > * [Recipe Book](https://github.com/enesozmus/RecipeBook)
 > * [Clipz](https://github.com/enesozmus/Clipz)
+> * [rxjs-playground](https://github.com/enesozmus/rxjs-playground)
 <hr/>
 
 ```diff
